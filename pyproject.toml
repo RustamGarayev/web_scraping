@@ -8,6 +8,8 @@ packages = [{include = "web_scraping"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
+requests = "^2.31.0"
+beautifulsoup4 = "^4.12.2"
 
 
 [build-system]
