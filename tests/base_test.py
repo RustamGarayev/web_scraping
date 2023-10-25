@@ -1,4 +1,6 @@
 import unittest
+import requests
+
 from unittest.mock import patch
 from scrapers import fetch_page
 
@@ -22,3 +24,14 @@ class BaseScraperTest(unittest.TestCase):
 
         content = fetch_page(self.url, self.HEADERS)
         self.assertIsNotNone(content)
+
+    @patch('requests.get')
+    def test_fetch_page_with_error(self, mock_get):
+        mock_get.side_effect = requests.RequestException('Something went wrong')
+
+        content = fetch_page(self.url, self.HEADERS)
+        self.assertEqual(content, {
+            "status": 500,
+            "message": "Something went wrong\nPossible cause: Something went wrong",
+            "body": None
+        })
