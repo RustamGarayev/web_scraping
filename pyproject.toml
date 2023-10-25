@@ -10,6 +10,7 @@ packages = [{include = "web_scraping"}]
 python = "^3.10"
 requests = "^2.31.0"
 beautifulsoup4 = "^4.12.2"
+pre-commit = "^3.5.0"
 
 
 [build-system]
