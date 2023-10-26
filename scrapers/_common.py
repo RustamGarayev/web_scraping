@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 def fetch_page(
     url: str, headers: ty.Dict[str, str]
-) -> ty.Union[requests.Response, ty.Dict[str, ty.Any]]:
+) -> requests.Response | ty.Dict[str, ty.Any]:
     try:
         return requests.get(url, headers=headers)
     except requests.RequestException as e:

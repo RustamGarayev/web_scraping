@@ -1,10 +1,12 @@
 import typing as ty
 
+from scrapers.abc import IScraper
+
 from scrapers import fetch_page
 from scrapers import form_soup
 
 
-class BinaAzScraper:
+class BinaAzScraper(IScraper):
     def __init__(self, url: str, headers: ty.Dict[str, str]):
         self.__url = url
         self.__headers = headers
