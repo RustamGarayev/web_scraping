@@ -1,1 +1,1 @@
-from scrapers._helpers import fetch_page
+from scrapers._common import fetch_page
