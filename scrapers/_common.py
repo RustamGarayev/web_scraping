@@ -1,6 +1,8 @@
 import requests
 import typing as ty
 
+from bs4 import BeautifulSoup
+
 
 def fetch_page(
     url: str, headers: ty.Dict[str, str]
@@ -13,3 +15,10 @@ def fetch_page(
             "message": f"Something went wrong\nPossible cause: {e}",
             "body": None,
         }
+
+
+def form_soup(
+    response: requests.Response,
+    parser: ty.Literal["html.parser", "lxml"] = "html.parser",
+):
+    return BeautifulSoup(response.content, parser)
