@@ -1,4 +1,8 @@
+import requests
 import typing as ty
+
+from bs4 import BeautifulSoup
+from scrapers import fetch_page
 
 
 class BinaAzScraper:

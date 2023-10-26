@@ -1,0 +1,1 @@
+from scrapers.bina_az_scraper.scraper import BinaAzScraper
