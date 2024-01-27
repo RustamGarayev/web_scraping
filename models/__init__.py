@@ -1,0 +1,1 @@
+from models._scraper_metaclass import AllOptional
